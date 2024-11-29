@@ -1,0 +1,218 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background-image: url("./images/bg-intro-desktop.png");
+  background-color: #ef807c;
+  min-height: 100vh;
+  height: 100%;
+  border: 2px solid dodgerblue;
+  display: grid;
+  place-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.item-1 {
+  max-width: 30em;
+  border: 2px solid palegreen;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-block: auto;
+  line-height: 1.1;
+  padding: 2em;
+}
+.item-1 h1 {
+  font-size: 2rem;
+  color: #feffff;
+}
+.item-1 p {
+  color: #fdf2f3;
+}
+
+.item-2 {
+  display: flex;
+  flex-direction: column;
+}
+.item-2__trial {
+  border: 2px solid blue;
+  background-color: #5a569e;
+  color: white;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em 1.5em;
+}
+.item-2__trial span {
+  margin-left: 0.2em;
+  color: #d3d2ee;
+}
+
+.form {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.form input {
+  border: 2px solid #e1e1e1;
+  border-radius: 5px;
+  padding-left: 1em;
+  padding-block: 0.3em;
+}
+
+/* Target the placeholder text inside the input elements */
+input::placeholder {
+  font-size: 0.8em; /* Set the size to your preferred value */
+}
+
+input[type="submit"] {
+  font-size: 1em;
+  background-color: #68c88f;
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0.5em 1.5em;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 2px solid #68c88f;
+}
+
+.form p {
+  color: #b6b4c0;
+  font-size: 0.5em;
+}
+
+.form p span {
+  font-weight: 800;
+  color: #ca8082;
+}
+
+/* Mobile Design - Stacks the layout vertically when screen width is below 700px */
+@media (max-width: 700px) {
+  body {
+    background-image: url("./images/bg-intro-mobile.png"); /* Mobile background */
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr; /* Stack the items vertically */
+    padding: 1em; /* Add padding for mobile */
+  }
+
+  .item-1,
+  .item-2 {
+    text-align: center;
+    max-width: 100%;
+    border: none;
+    padding: 1.5em;
+  }
+
+  .item-1 h1 {
+    font-size: 1.5rem; /* Adjust header font size for mobile */
+  }
+  .item-2 div {
+    padding: 1.5em;
+  }
+
+  .form input,
+  .form input[type="submit"] {
+    width: 100%; /* Make input and submit buttons full-width */
+  }
+
+  .item-2__trial {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 1em; /* Optional: more padding for mobile */
+    line-height: 0.9;
+    border-radius: 10px;
+  }
+
+  /* Ensure the span element wraps */
+  .item-2__trial span {
+    display: block; /* Forces the span to be a block element, making it stack below the text */
+    margin-top: 0.5em; /* Adds space between the lines */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .form p {
+    font-size: 0.7em; /* Increase font size for mobile */
+  }
+}
