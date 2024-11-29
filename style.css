@@ -72,7 +72,6 @@ body {
   background-color: #ef807c;
   min-height: 100vh;
   height: 100%;
-  border: 2px solid dodgerblue;
   display: grid;
   place-content: center;
   font-family: "Poppins", sans-serif;
@@ -90,7 +89,6 @@ body {
 
 .item-1 {
   max-width: 30em;
-  border: 2px solid palegreen;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -111,7 +109,6 @@ body {
   flex-direction: column;
 }
 .item-2__trial {
-  border: 2px solid blue;
   background-color: #5a569e;
   color: white;
   margin-bottom: 1em;
